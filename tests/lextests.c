@@ -1,6 +1,7 @@
-#include "munit/munit.h"
-#include "../sunflower.c"
+#include "munit.h"
 
-void main(void) {
-  /* Use µnit here. */
+int main(void) {
+  munit_assert_int(1, ==, 0);
+
+  return 0;
 }
