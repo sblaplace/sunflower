@@ -4,7 +4,9 @@
 
 void lex(char* program_str) {
     while (*program_str) {
-        
+        switch (program_str[0]) {
+
+        }
         *(program_str++) = '0';
     }
 }

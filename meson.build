@@ -6,3 +6,6 @@ exe = executable('sunflower', 'sunflower.c',
   install : true)
 
 test('basic', exe)
+
+lex_tests_exe = executable('lextests', 'tests/lextests.c')
+test('lex test', exe)
