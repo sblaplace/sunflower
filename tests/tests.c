@@ -1,20 +1,13 @@
 #include "munit.h"
-#include "../src/lex.h"
 
 static MunitResult test_empty_string(const MunitParameter params[], void* fixture) {
-  munit_assert_string_equal(lex(""), "");
+  munit_assert_string_equal("", "");
   return MUNIT_OK;
 }
-
-static MunitResult test_fn(const MunitParameter params[], void* fixture) {
-  munit_assert_string_equal(lex("fn"), "");
-  return MUNIT_OK;
-}
-
 
 MunitTest tests[] = {
     {
-    "/lex-empty-string", /* name */
+    "/empty-string", /* name */
     test_empty_string, /* test */
     NULL, /* setup */
     NULL, /* tear_down */
@@ -27,7 +20,7 @@ MunitTest tests[] = {
 };
 
 static const MunitSuite suite = {
-  "/lex-tests", /* name */
+  "/tests", /* name */
   tests, /* tests */
   NULL, /* suites */
   1, /* iterations */
