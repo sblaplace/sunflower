@@ -1,5 +1,10 @@
 {
     "C_Cpp.default.compileCommands": "builddir/compile_commands.json",
     "cmake.configureOnOpen": true,
-    "cmake.sourceDirectory": "/home/frei/code/projects/sunflower/build/meson-private/cmake_munit"
+    "cmake.sourceDirectory": "/home/frei/code/projects/sunflower/build/meson-private/cmake_munit",
+    "files.associations": {
+        "*.pl": "prolog",
+        "string.h": "c",
+        "stdlib.h": "c"
+    }
 }
