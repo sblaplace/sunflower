@@ -3,7 +3,8 @@
 
 static MunitResult test_empty_string(const MunitParameter params[], void *fixture)
 {
-  munit_assert_string_equal(lex("")->val, "");
+  char *val = lex("")->next->val;
+  munit_assert_string_equal(val, "");
   return MUNIT_OK;
 }
 
@@ -21,7 +22,7 @@ static MunitResult test_line_end(const MunitParameter params[], void *fixture)
   return MUNIT_OK;
 }
 
-MunitTest tests[] = {
+MunitTest lex_tests[] = {
     {
         "/empty-string",        /* name */
         test_empty_string,      /* test */
@@ -51,8 +52,8 @@ MunitTest tests[] = {
     {NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL}};
 
 static const MunitSuite suite = {
-    "/tests",               /* name */
-    tests,                  /* tests */
+    "/lex-tests",           /* name */
+    lex_tests,              /* tests */
     NULL,                   /* suites */
     1,                      /* iterations */
     MUNIT_SUITE_OPTION_NONE /* options */

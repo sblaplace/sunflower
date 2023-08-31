@@ -11,4 +11,4 @@ test('basic', exe)
 
 lex_tests_src = ['tests/lex_tests.c', 'src/lexer.c', 'src/lexer.h']
 lex_tests_exe = executable('tests', lex_tests_src, dependencies: [munit])
-test('test', lex_tests_exe)
+test('lex_tests', lex_tests_exe)

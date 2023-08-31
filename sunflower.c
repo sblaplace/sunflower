@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 {
     char *input = (char *)malloc(8 * sizeof(char));
     node_t *lexed;
+    node_t *next;
 
     if (argc != 1)
     {
@@ -17,10 +18,16 @@ int main(int argc, char **argv)
     }
     printf("This is project %s.\n", PROJECT_NAME);
 
-    strcpy("example", input);
+    strcpy(input, "example");
 
     lexed = lex(input);
     free(input);
+    // while (lexed)
+    // {
+    //     next = lexed->next;
+    //     free(lexed);
+    //     lexed = next;
+    // }
 
     return 0;
 }
