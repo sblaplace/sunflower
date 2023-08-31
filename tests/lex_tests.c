@@ -1,5 +1,5 @@
 #include "munit.h"
-#include "src/lexer.h"
+#include "src/lex.h"
 
 static MunitResult test_empty_string(const MunitParameter params[], void *fixture)
 {

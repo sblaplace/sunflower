@@ -1,5 +1,5 @@
-#ifndef LEXER_H_
-#define LEXER_H_
+#ifndef LEX_H_
+#define LEX_H_
 
 typedef struct node
 {

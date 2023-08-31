@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "src/lexer.h"
+#include "src/lex.h"
 
 #define PROJECT_NAME "sunflower"
 

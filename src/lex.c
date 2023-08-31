@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "lexer.h"
+#include "lex.h"
 
 node_t *lex(char *unit_stream)
 {
