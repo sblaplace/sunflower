@@ -11,14 +11,14 @@ static MunitResult test_empty_string(const MunitParameter params[], void *fixtur
 static MunitResult test_single_line(const MunitParameter params[], void *fixture)
 {
   node_t *res = lex("var a = 1 + 1;");
-  munit_assert_string_equal(res->next->val, "a");
+  munit_assert_string_equal(res->next->next->val, "a");
   return MUNIT_OK;
 }
 
 static MunitResult test_line_end(const MunitParameter params[], void *fixture)
 {
   node_t *res = lex("\"a\";");
-  munit_assert_string_equal(res->next->val, "ENDL");
+  munit_assert_string_equal(res->next->next->val, "ENDL");
   return MUNIT_OK;
 }
 
