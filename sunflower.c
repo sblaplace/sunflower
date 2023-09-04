@@ -21,13 +21,18 @@ int main(int argc, char **argv)
     strcpy(input, "example");
 
     lexed = lex(input);
+
     free(input);
-    // while (lexed)
-    // {
-    //     next = lexed->next;
-    //     free(lexed);
-    //     lexed = next;
-    // }
+    while (lexed)
+    {
+        printf("%p", lexed);
+        next = lexed->next;
+        if (lexed->val)
+            free(lexed->val);
+        if (lexed)
+            free(lexed);
+        lexed = next;
+    }
 
     return 0;
 }

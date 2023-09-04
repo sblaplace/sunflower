@@ -22,6 +22,13 @@ static MunitResult test_line_end(const MunitParameter params[], void *fixture)
   return MUNIT_OK;
 }
 
+static MunitResult test_code_block(const MunitParameter params[], void *fixture)
+{
+  node_t *res = lex("{\na+a;\nb+b;\n}");
+  munit_assert_string_equal(res->next->next->val, "ENDL");
+  return MUNIT_OK;
+}
+
 MunitTest lex_tests[] = {
     {
         "/empty-string",        /* name */
@@ -42,6 +49,14 @@ MunitTest lex_tests[] = {
     {
         "/line-end",            /* name */
         test_line_end,          /* test */
+        NULL,                   /* setup */
+        NULL,                   /* tear_down */
+        MUNIT_TEST_OPTION_NONE, /* options */
+        NULL                    /* parameters */
+    },
+    {
+        "/code-block",          /* name */
+        test_code_block,        /* test */
         NULL,                   /* setup */
         NULL,                   /* tear_down */
         MUNIT_TEST_OPTION_NONE, /* options */
