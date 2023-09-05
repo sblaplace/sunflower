@@ -25,7 +25,7 @@ static MunitResult test_line_end(const MunitParameter params[], void *fixture)
 static MunitResult test_code_block(const MunitParameter params[], void *fixture)
 {
   node_t *res = lex("{\na+a;\nb+b;\n}");
-  munit_assert_string_equal(res->next->next->val, "ENDL");
+  munit_assert_string_equal(res->next->val, "BLOCK");
   return MUNIT_OK;
 }
 

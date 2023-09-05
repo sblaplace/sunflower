@@ -38,9 +38,5 @@ node_t *lex(char *unit_stream)
     current->next = &(node_t){.val = val, .next = NULL};
     current = current->next;
 
-    printf("%p\n", head);
-    printf("%s\n", head->val);
-    printf("%s\n", head->next->val);
-
     return head;
 }

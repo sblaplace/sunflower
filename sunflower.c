@@ -7,9 +7,9 @@
 
 int main(int argc, char **argv)
 {
-    char *input = (char *)malloc(8 * sizeof(char));
+    char *input = (char *)malloc(9 * sizeof(char));
     node_t *lexed;
-    node_t *next;
+    node_t *tmp;
 
     if (argc != 1)
     {
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     }
     printf("This is project %s.\n", PROJECT_NAME);
 
-    strcpy(input, "example");
+    strcpy(input, "example;");
 
     lexed = lex(input);
 
@@ -26,12 +26,11 @@ int main(int argc, char **argv)
     while (lexed)
     {
         printf("%p", lexed);
-        next = lexed->next;
-        if (lexed->val)
-            free(lexed->val);
-        if (lexed)
-            free(lexed);
-        lexed = next;
+        tmp = lexed;
+        lexed = lexed->next;
+        if (tmp->val)
+            free(tmp->val);
+        free(tmp);
     }
 
     return 0;
