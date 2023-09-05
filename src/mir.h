@@ -1,5 +1,5 @@
-#ifndef LEX_H_
-#define LEX_H_
+#ifndef MIR_H_
+#define MIR_H_
 
 #include "parse.h"
 
