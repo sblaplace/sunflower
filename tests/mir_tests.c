@@ -4,15 +4,14 @@
 
 static MunitResult test_empty_string(const MunitParameter params[], void *fixture)
 {
-    char *llvm_ir = "testingtesting.\n"
-                    "line2testing.";
+    mir_t *mir = malloc(sizeof(mir_t));
 
     ast_t *parsed = malloc(sizeof(ast_t));
-    munit_assert_string_equal(lower(parsed)->val, llvm_ir);
+    munit_assert_string_equal(lower(parsed)->val, mir->val);
     return MUNIT_OK;
 }
 
-MunitTest compile_tests[] = {
+MunitTest mir_tests[] = {
     /* Mark the end of the array with an entry where the test
      * function is NULL */
     {
@@ -26,8 +25,8 @@ MunitTest compile_tests[] = {
 };
 
 static const MunitSuite suite = {
-    "/compile-tests",       /* name */
-    compile_tests,          /* tests */
+    "/mir-tests",           /* name */
+    mir_tests,              /* tests */
     NULL,                   /* suites */
     1,                      /* iterations */
     MUNIT_SUITE_OPTION_NONE /* options */
