@@ -24,3 +24,7 @@ test('mir_tests', mir_tests_exe)
 compile_tests_src = ['tests/compile_tests.c', 'src/compile.c', 'src/compile.h']
 compile_tests_exe = executable('compile_tests', compile_tests_src, dependencies: [munit])
 test('compile_tests', compile_tests_exe)
+
+hashtable_tests_src = ['tests/hashtable_tests.c', 'src/hashtable.c', 'src/hashtable.h']
+hashtable_tests_exe = executable('hashtable_tests', hashtable_tests_src, dependencies: [munit])
+test('hashtable_tests', hashtable_tests_exe)
