@@ -1,14 +1,14 @@
 #include "munit.h"
-#include "src/compile.h"
 #include "src/mir.h"
+#include "src/parse.h"
 
 static MunitResult test_empty_string(const MunitParameter params[], void *fixture)
 {
     char *llvm_ir = "testingtesting.\n"
                     "line2testing.";
 
-    mir_t *lowered = malloc(sizeof(mir_t));
-    munit_assert_string_equal(compile(lowered), llvm_ir);
+    ast_t *parsed = malloc(sizeof(ast_t));
+    munit_assert_string_equal(lower(parsed)->val, llvm_ir);
     return MUNIT_OK;
 }
 
